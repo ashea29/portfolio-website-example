@@ -85,7 +85,7 @@
   --mobile-menu-btn-color: var(--light-1);
   --mobile-menu-bg: var(--dark);
 
-  transition: all 0.3s ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 
 html {
