@@ -54,11 +54,13 @@ themeToggleMobile.addEventListener('click', (e) => {
 mobileMenuBtn.addEventListener('click', function () {
   mobileMenuBtn.classList.toggle('active');
   mobileNavMenu.classList.toggle('active');
+  document.body.classList.toggle('active');
 });
 
 
 mobileMenuLinks.forEach(link => {
   link.addEventListener('click', function () {
+    document.body.classList.remove('active');
     mobileMenuBtn.classList.remove('active');
     mobileNavMenu.classList.remove('active');
   });

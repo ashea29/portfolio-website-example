@@ -99,8 +99,12 @@ body {
   color: var(--text-primary);
 }
 
+body.active {
+  overflow: hidden;
+}
+
 .container {
-  width: min(100% - 2rem, 1300px);
+  width: min(100vw - 2rem, 1300px);
   min-height: 100vh;
   padding-inline: 1.2rem;
   margin-inline: auto;
@@ -429,6 +433,7 @@ footer {
     background: none;
     outline: none;
     border: none;
+    z-index: 11;
   }
 
   .mobile-menu-btn .mobile-menu-bar, .mobile-menu-btn::before, .mobile-menu-btn::after  {
@@ -459,14 +464,14 @@ footer {
 
   .mobile-nav-menu {
     position: fixed;
-    top: 99px;
+    top: 0px;
     left: 100%;
     width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    z-index: 1000;
+    z-index: 10;
     background-color: var(--mobile-menu-bg);
     padding-top: 120px;
     transition: 0.4s;
@@ -486,6 +491,10 @@ footer {
 @media screen and (max-width: 900px) {
   .hero {
     flex-direction: column-reverse;
+  }
+
+  .hero-img {
+    width: calc(100vw - 3rem);
   }
 
   .hero-content {
