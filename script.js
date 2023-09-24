@@ -9,6 +9,7 @@ const contactFormBtn = document.querySelector('.contact-me-form button');
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const mobileNavMenu = document.querySelector('.mobile-nav-menu');
 const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+const sections = document.querySelectorAll('.section:not(.hero)')
 
 
 document.addEventListener('scroll', (e) => {
@@ -35,7 +36,7 @@ themeToggle.addEventListener('click', (e) => {
 
   themeToggleMobile.querySelector('img').src = document.body.classList.contains('dark-theme') ? './images/moon.svg' : './images/sun.svg';
 
-  mobileMenu.querySelector('img').src = document.body.classList.contains('dark-theme') ? './images/menu-btn-dark-theme.svg' : './images/menu-btn-light-theme.svg';
+  // mobileNavMenu.querySelector('img').src = document.body.classList.contains('dark-theme') ? './images/menu-btn-dark-theme.svg' : './images/menu-btn-light-theme.svg';
 });
 
 
@@ -46,7 +47,7 @@ themeToggleMobile.addEventListener('click', (e) => {
 
   themeToggleMobile.querySelector('img').src = document.body.classList.contains('dark-theme') ? './images/moon.svg' : './images/sun.svg';
 
-  mobileMenu.querySelector('img').src = document.body.classList.contains('dark-theme') ? './images/menu-btn-dark-theme.svg' : './images/menu-btn-light-theme.svg';
+  // mobileNavMenu.querySelector('img').src = document.body.classList.contains('dark-theme') ? './images/menu-btn-dark-theme.svg' : './images/menu-btn-light-theme.svg';
 
 });
 
@@ -70,5 +71,28 @@ mobileMenuLinks.forEach(link => {
 backToTop.addEventListener('click', (e) => {
   window.scrollTo({
     top: 0,
+    left: 0
   })
+  
+  history.replaceState([], "", window.location.href.split("#")[0])
+})
+
+
+const observerOptions = {
+  threshold: 0.5
+}
+
+function addSlideIn(entries) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('slide-in');
+    }
+  });
+}
+
+const observer = new IntersectionObserver(addSlideIn, observerOptions)
+
+
+sections.forEach(section => {
+  observer.observe(section);
 })
