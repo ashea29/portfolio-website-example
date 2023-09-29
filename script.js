@@ -35,8 +35,6 @@ themeToggle.addEventListener('click', (e) => {
   themeToggle.querySelector('img').src = document.body.classList.contains('dark-theme') ? './images/moon.svg' : './images/sun.svg';
 
   themeToggleMobile.querySelector('img').src = document.body.classList.contains('dark-theme') ? './images/moon.svg' : './images/sun.svg';
-
-  // mobileNavMenu.querySelector('img').src = document.body.classList.contains('dark-theme') ? './images/menu-btn-dark-theme.svg' : './images/menu-btn-light-theme.svg';
 });
 
 
@@ -46,9 +44,6 @@ themeToggleMobile.addEventListener('click', (e) => {
   themeToggle.querySelector('img').src = document.body.classList.contains('dark-theme') ? './images/moon.svg' : './images/sun.svg';
 
   themeToggleMobile.querySelector('img').src = document.body.classList.contains('dark-theme') ? './images/moon.svg' : './images/sun.svg';
-
-  // mobileNavMenu.querySelector('img').src = document.body.classList.contains('dark-theme') ? './images/menu-btn-dark-theme.svg' : './images/menu-btn-light-theme.svg';
-
 });
 
 
