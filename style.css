@@ -232,28 +232,6 @@ section {
   justify-content: center;
 }
 
-
-section.section:not(.hero) {
-  opacity: 0;
-  transition: opacity 0.5s, transform 0.5s;
-}
-
-
-.left {
-  transform-origin: left center;
-  transform: translateX(-50%);
-}
-
-.right {
-  transform-origin: right center;
-  transform: translateX(50%);
-}
-
-.slide-in {
-  opacity: 1 !important;
-  transform: translateX(0);
-} 
-
 .hero {
   flex-direction: row;
   justify-content: space-between;
