@@ -48,8 +48,10 @@
   --light-2: #d7d7d7;
   --light-3: #fff;
   --dark: #212121;
+  --dark-2: #5e5e5e;
   --blue-1: #2066df;
   --blue-2: #3a82ff;
+  --blue-3: #5795ff;
 
   /* Light theme - variables */
   --bg-body: var(--light-1);
@@ -63,7 +65,9 @@
   --cta-border: var(--dark);
   --github-link-color: var(--blue-1);
   --bg-form-submit: var(--dark);
+  --bg-form-submit-disabled: var(--dark-2);
   --text-form-submit: var(--light-2);
+  --text-form-submit-disabled: var(--light-3);
   --mobile-menu-btn-color: var(--dark);
   --mobile-menu-bg: var(--light-1);
 }
@@ -81,7 +85,9 @@
   --cta-border: var(--light-1);
   --github-link-color: var(--blue-2);
   --bg-form-submit: var(--blue-2);
+  --bg-form-submit-disabled: var(--blue-3);
   --text-form-submit: var(--light-1);
+  --text-form-submit-disabled: var(--dark);
   --mobile-menu-btn-color: var(--light-1);
   --mobile-menu-bg: var(--dark);
 
@@ -208,6 +214,20 @@ header {
   font-weight: 800;
 }
 
+.theme-toggle, .theme-toggle--mobile {
+  cursor: pointer;
+}
+
+.theme-toggle > img {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+.theme-toggle--mobile > img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
 section {
   width: 100%;
   min-height: 100vh;
@@ -216,6 +236,26 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+section.section:not(.hero) {
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.left {
+  transform-origin: left center;
+  transform: translateX(-50%);
+}
+
+.right {
+  transform-origin: right center;
+  transform: translateX(50%);
+}
+
+.slide-in {
+  opacity: 1 !important;
+  transform: translateX(0);
 }
 
 .hero {
@@ -334,22 +374,23 @@ section {
   margin-bottom: 3rem;
 }
 
-.contact-me-form {
+.contact-form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   min-width: 17rem;
 }
 
-.contact-me-form > * {
+.contact-form > * {
   min-width: 100%;
 }
 
-.contact-me-form input, .contact-me-form textarea {
+.contact-form input, .contact-form textarea {
   padding: 0.7rem 1rem;
+  outline: none;
 }
 
-.contact-me-form button {
+.contact-form button {
   padding: 1rem 1.5rem;
   font-size: var(--font-size-base);
   cursor: pointer;
@@ -358,6 +399,27 @@ section {
   border-radius: 5px;
   margin-top: 1.7rem;
 }
+
+
+/* PROJECT 11 - START*/
+button.contact-submit:disabled {
+  cursor: not-allowed;
+  background-color: var(--bg-form-submit-disabled);
+  color: var(--text-form-submit-disabled) !important;
+}
+
+#form-submitted-msg {
+  margin-top: 2rem;
+  border-radius: 5px;
+  background-color: rgb(67, 161, 67);
+  padding: 0.5rem;
+  width: 17rem;
+  text-align: center;
+  color: #fff;
+  display: none;
+}
+/* PROJECT 11 - END */
+
 
 footer {
   padding: 2rem;
@@ -408,6 +470,7 @@ footer {
   }
 
   .brand-logo--mobile, 
+  .theme-toggle--mobile,
   .mobile-menu-btn {
     display: block;
   }
