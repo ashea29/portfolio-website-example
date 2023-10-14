@@ -208,20 +208,6 @@ header {
   font-weight: 800;
 }
 
-.theme-toggle, .theme-toggle--mobile {
-  cursor: pointer;
-}
-
-.theme-toggle > img {
-  width: 1.7rem;
-  height: 1.7rem;
-}
-
-.theme-toggle--mobile > img {
-  width: 2.5rem;
-  height: 2.5rem;
-}
-
 section {
   width: 100%;
   min-height: 100vh;
@@ -422,7 +408,6 @@ footer {
   }
 
   .brand-logo--mobile, 
-  .theme-toggle--mobile,
   .mobile-menu-btn {
     display: block;
   }
