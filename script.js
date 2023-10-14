@@ -34,8 +34,6 @@ themeToggle.addEventListener('click', (e) => {
   themeToggle.querySelector('img').src = document.body.classList.contains('dark-theme') ? './images/moon.svg' : './images/sun.svg';
 
   themeToggleMobile.querySelector('img').src = document.body.classList.contains('dark-theme') ? './images/moon.svg' : './images/sun.svg';
-
-  mobileMenu.querySelector('img').src = document.body.classList.contains('dark-theme') ? './images/menu-btn-dark-theme.svg' : './images/menu-btn-light-theme.svg';
 });
 
 
@@ -45,9 +43,6 @@ themeToggleMobile.addEventListener('click', (e) => {
   themeToggle.querySelector('img').src = document.body.classList.contains('dark-theme') ? './images/moon.svg' : './images/sun.svg';
 
   themeToggleMobile.querySelector('img').src = document.body.classList.contains('dark-theme') ? './images/moon.svg' : './images/sun.svg';
-
-  mobileMenu.querySelector('img').src = document.body.classList.contains('dark-theme') ? './images/menu-btn-dark-theme.svg' : './images/menu-btn-light-theme.svg';
-
 });
 
 
@@ -70,5 +65,8 @@ mobileMenuLinks.forEach(link => {
 backToTop.addEventListener('click', (e) => {
   window.scrollTo({
     top: 0,
+    left: 0
   })
+  
+  history.replaceState([], "", window.location.href.split("#")[0])
 })
